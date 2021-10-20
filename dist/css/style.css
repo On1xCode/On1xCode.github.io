@@ -886,6 +886,11 @@ section.light {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 45px;
           flex: 0 0 45px;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 
 .steps__item-title-text {
@@ -922,6 +927,12 @@ section.light {
   font-size: 15px;
 }
 
+.steps__item:hover .steps__item-title-count {
+  -webkit-transform: translateX(-5px);
+      -ms-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
 .work__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -934,7 +945,50 @@ section.light {
           align-items: center;
 }
 
-.work__text {
+.work__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  -webkit-transition: -webkit-filter 0.2s, -webkit-transform 0.3s;
+  transition: -webkit-filter 0.2s, -webkit-transform 0.3s;
+  -o-transition: filter 0.2s, transform 0.3s;
+  transition: filter 0.2s, transform 0.3s;
+  transition: filter 0.2s, transform 0.3s, -webkit-filter 0.2s, -webkit-transform 0.3s;
+}
+
+.work__item:hover {
+  -webkit-filter: drop-shadow(0px 0px 5px #ff0000);
+          filter: drop-shadow(0px 0px 5px #ff0000);
+  -webkit-transform: translateX(-15px);
+      -ms-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.work__item-img {
+  background-color: #F44336;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.work__item-img img {
+  display: block;
+  width: 90px;
+}
+
+.work__item-text {
+  font-family: "Poppins";
+  font-weight: 500;
+  padding-left: 15px;
+  line-height: 1.3;
+  color: #212121;
   font-size: 15px;
 }
 
@@ -1012,42 +1066,48 @@ section.light {
   color: #71717a;
 }
 
-.pricing__text {
-  display: inline-block;
+.pricing__item {
+  text-align: left;
   font-size: 15px;
   line-height: 16px;
-  text-align: center;
-  max-width: 750px;
+  max-width: 670px;
   margin: 0 auto;
-  padding: 10px;
-  color: #212121;
-  background-color: #fafafa;
   font-family: "Poppins";
-  border: 1px solid #F44336;
-  border-radius: 5px;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.pricing__text + .pricing__text {
+.pricing__item-count {
+  font-size: 60px;
+  font-weight: 900;
+  width: 56px;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  -o-transition: transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.pricing__item-text {
+  margin-left: 10px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.pricing__item:hover .pricing__item-count {
+  -webkit-transform: translateX(-5px);
+      -ms-transform: translateX(-5px);
+          transform: translateX(-5px);
+}
+
+.pricing__item + .pricing__item {
   margin-top: 30px;
-}
-
-.pricing__text::after {
-  content: "";
-  display: block;
-  width: 2px;
-  height: 32px;
-  background-color: #F44336;
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.pricing__text:nth-last-child(1)::after {
-  display: none;
 }
 
 .pricing__btn {
@@ -1661,12 +1721,39 @@ section.light {
             align-items: center;
   }
 
+  .pricing__card:hover {
+    -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+
   .pricing__card + .pricing__card {
     margin-top: 30px;
   }
 }
 
 @media screen and (max-width: 580px) {
+  .work__wrapper > .col {
+    width: 100%;
+  }
+
+  .work__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .work__item .work__item-text {
+    padding: 0;
+  }
+
+  .work__item:hover {
+    -webkit-transform: translateX(-5px);
+        -ms-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+
   .footer__links a {
     font-size: 15px;
   }
