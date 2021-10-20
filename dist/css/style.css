@@ -960,7 +960,7 @@ section.light {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .pricing__card {
@@ -1051,7 +1051,7 @@ section.light {
 }
 
 .pricing__btn {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .reviews .slider__controls {
