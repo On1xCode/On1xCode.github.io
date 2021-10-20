@@ -1429,6 +1429,11 @@ section.light {
   color: #fff;
 }
 
+.faq__link {
+  color: #F44336;
+  text-decoration: underline;
+}
+
 .faq__item {
   background-color: #fafafa;
   border-radius: 10px;

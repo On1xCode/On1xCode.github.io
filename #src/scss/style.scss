@@ -1193,6 +1193,12 @@ section {
 
 .faq {
 
+  // .faq__link
+  &__link {
+    color: $accent;
+    text-decoration: underline;
+  }
+
   // .faq__title
   &__title {
 

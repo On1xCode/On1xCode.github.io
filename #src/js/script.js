@@ -22,18 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
       breakpoints: {
          // when window width is >= 320px
          320: {
-           slidesPerView: 1,
-           spaceBetween: 70
+            slidesPerView: 1,
+            spaceBetween: 70
          },
          // when window width is >= 480px
          720: {
-           slidesPerView: 2,
-           spaceBetween: 30
+            slidesPerView: 2,
+            spaceBetween: 30
          },
          // when window width is >= 640px
          980: {
-           slidesPerView: 3,
-           spaceBetween: 50
+            slidesPerView: 3,
+            spaceBetween: 50
          }
       }
    });
@@ -103,4 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
    })
 
 
+   function outNum(num, time, elem) {
+      let e = document.querySelector(elem);
+      let n = 0;
+      let t = Math.round(time / (num / 1));
+      let interval = setInterval(() => {
+         n = n + 1;
+         if (n == num) {
+            clearInterval(interval);
+         }
+         e.innerHTML = n;
+      }, t);
+   };
+
+   // outNum(17, 600, ".sd-1");
+   // outNum(10, 600, ".sd-2");
+   // outNum(21, 600, ".sd-3");
 })
