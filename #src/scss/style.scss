@@ -34,16 +34,19 @@ html {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: $fontsize;
   line-height: $lineheight;
   color: $textcolor;
   min-width: 320px;
   position: relative;
   overflow-x: hidden;
-  background: linear-gradient(180deg, #1c1917 0%, #484540 100%);
+  background-color: #1c1917;
+  // background: linear-gradient(180deg, #1c1917 0%, #484540 100%);
   overflow-x: hidden;
 }
+
+
 
 h1,
 h2,
@@ -71,7 +74,10 @@ a {
 // ===== Global styles ========================================================
 
 section {
-  margin-bottom: 50px;
+  padding: 30px 0;
+  &.light {
+    background-color: #292524;
+  }
 }
 
 .container {
@@ -323,6 +329,7 @@ section {
 .intro {
   padding-top: 100px;
   text-align: center;
+  min-height: 100vh;
   @media screen and (max-width: 480px){
     padding-top: 30px;
   }
@@ -454,89 +461,182 @@ section {
 
 
 .steps {
+  font-family: "Poppins";
 
   // .steps__wrapper
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media screen and (max-width: 1195px){
-      flex-direction: column;
-    }
-  }
-
-  // .steps__item
-  &__item {
-    max-width: 365px;
-    background-color: #fff;
-    color: #212121;
-    padding: 15px;
-    border-radius: 10px;
-    @media screen and (max-width: 1195px){
-      & + & {
-        margin-top: 25px;
+    @media screen and (max-width: 996px){
+      flex-direction: column-reverse;
+      .steps__img {
+        margin-top: 30px;
+      }
+      .steps__col {
+        max-width: 700px;
+        margin: 0 auto;
+        width: 100% !important;
       }
     }
   }
 
-  // .steps__item-title
-  &__item-title {
-    text-align: center;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 21px;
-    color: #212121;
-    position: relative;
-    z-index: 2;
-    span {
-      background-color: #fff;
-      display: inline-block;
-      padding: 0 8px;
+  // .steps__col
+  &__col {
+    &.sm {
+      width: 45%;
     }
-    &::before {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      background-color: #84cc16;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    &.lg {
+      width: 52%;
     }
   }
 
-  // .steps__item-subtitle
-  &__item-subtitle {
-    font-weight: 300;
-    text-align: center;
-    line-height: 16px;
+  // .steps__img
+  &__img {
+    width: 100%;
+    max-width: 510px;
+    display: block;
+    margin: 0 auto;
   }
 
-  // .steps__item-list
-  &__item-list {
-    list-style: none;
-  }
+  // .steps__item
+  &__item {
+    font-weight: 400;
+    &-title {
+      display: flex;
+      align-items: center;
+      &-count {
+        display: inline-block;
+        // width: 45px;
+        font-size: 50px;
+        margin-right: 10px;
+        font-weight: 900;
+        flex: 0 0 45px;
+        @media screen and (max-width: 490px){
+          font-size: 40px;
+          flex: 0 0 38px;
 
-  li {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 0.045em;
-    color: #212121;
-    &::before {
-      content: "";
-      display: inline-block;
-      width: 11px;
-      height: 12px;
-      background-image: url("../img/list-item.svg");
+        }
+
+      }
+      &-text {
+        font-size: 16px;
+        @media screen and (max-width: 490px){
+          font-size: 15px;
+
+        }
+      }
+    }
+    &-list {
+      padding-left: 55px;
+      list-style: none;
+      margin-bottom: 15px;
+      &-item {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.6;
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          background-color: $accent;
+          border-radius: 50%;
+        }
+        & + & {
+          margin-top: 10px;
+        }
+        @media screen and (max-width: 490px){
+          font-size: 14px;
+
+        }
+      }
+
+      @media screen and (max-width: 490px){
+        padding-left: 48px;
+      }
+    }
+    &:last-child {
+      padding-left: 55px;
+      font-size: 15px;
+      @media screen and (max-width: 490px){
+        padding-left: 48px;
+        font-size: 14px;
+      }
     }
   }
-  li + li {
-    margin-top: 10px;
-  }
+
+  // &__item {
+  //   max-width: 365px;
+  //   background-color: #fff;
+  //   color: #212121;
+  //   padding: 15px;
+  //   border-radius: 10px;
+  //   @media screen and (max-width: 1195px){
+  //     & + & {
+  //       margin-top: 25px;
+  //     }
+  //   }
+  // }
+
+  // // .steps__item-title
+  // &__item-title {
+  //   text-align: center;
+  //   font-style: normal;
+  //   font-weight: bold;
+  //   font-size: 18px;
+  //   line-height: 21px;
+  //   color: #212121;
+  //   position: relative;
+  //   z-index: 2;
+  //   span {
+  //     background-color: #fff;
+  //     display: inline-block;
+  //     padding: 0 8px;
+  //   }
+  //   &::before {
+  //     z-index: -1;
+  //     content: "";
+  //     position: absolute;
+  //     width: 100%;
+  //     height: 1px;
+  //     background-color: #84cc16;
+  //     left: 50%;
+  //     top: 50%;
+  //     transform: translate(-50%, -50%);
+  //   }
+  // }
+
+  // // .steps__item-subtitle
+  // &__item-subtitle {
+  //   font-weight: 300;
+  //   text-align: center;
+  //   line-height: 16px;
+  // }
+
+  // // .steps__item-list
+  // &__item-list {
+  //   list-style: none;
+  // }
+
+  // li {
+  //   font-style: normal;
+  //   font-weight: 300;
+  //   font-size: 14px;
+  //   line-height: 16px;
+  //   letter-spacing: 0.045em;
+  //   color: #212121;
+  //   &::before {
+  //     content: "";
+  //     display: inline-block;
+  //     width: 11px;
+  //     height: 12px;
+  //     background-image: url("../img/list-item.svg");
+  //   }
+  // }
+  // li + li {
+  //   margin-top: 10px;
+  // }
 }
 
 // ===== Steps ========================================================
@@ -551,7 +651,7 @@ section {
     justify-content: space-between;
     align-items: center;
     @media screen and (max-width: 985px){
-      flex-direction: column-reverse;
+      flex-direction: column;
       justify-content: center;
       & > .col {
         width: 90%;
@@ -567,8 +667,8 @@ section {
 
   // .work__img
   &__img {
-    border: 1px solid #f44336;
-    border-radius: 10px;
+    // border: 1px solid #f44336;
+    // border-radius: 10px;
     overflow: hidden;
     img {
       width: 100%;
@@ -609,6 +709,12 @@ section {
     max-width: 280px;
     border-radius: 10px;
     margin: 0 30px;
+    transition: transform 0.3s, filter 0.2s;
+    &:hover {
+      filter: drop-shadow(0px 0px 5px #ff0000);
+      transform: translateY(-20px)
+
+    }
     @media screen and (max-width: 670px){
       & + & {
         margin-top: 30px;
@@ -645,13 +751,35 @@ section {
 
   // .pricing__text
   &__text {
+    display: inline-block;
     font-size: 15px;
     line-height: 16px;
     text-align: center;
     max-width: 750px;
     margin: 0 auto;
+    padding: 10px;
+    color: #212121;
+    background-color: #fafafa;
+    font-family: "Poppins";
+    border: 1px solid $accent;
+    border-radius: 5px;
+    position: relative;
     & + & {
-      margin-top: 15px;
+      margin-top: 30px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 2px;
+      height: 32px;
+      background-color: $accent;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+    }
+    &:nth-last-child(1)::after {
+      display: none;
     }
   }
 
@@ -918,7 +1046,7 @@ section {
   &__wrapper {
     background-color: #ffffff;
     max-width: 970px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     border-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -1107,6 +1235,23 @@ section {
 
 .footer {
   padding: 30px 0;
+
+  // .footer__links
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    a + a {
+      margin-top: 15px;
+    }
+
+    @media screen and (max-width: 580px) {
+      a {
+        font-size: 15px;
+      }
+    }
+  }
 
   // .footer__text
   &__text {
