@@ -1,8 +1,19 @@
 // User variables:
-$accent: #F44336; // Accent Color
+$accent: #f80201; // Accent Color
+$whiteTextColor: #fff;
+$darkTextColor: #212121;
 $textcolor: #fff; // Text Color
 $fontsize: 14px; // Body Font Size
 $lineheight: 1.3; // Document Line Height
+
+$bodyBgDark: #1c1917;
+$bodyBgLight: #292524;
+
+// Srollbar:
+$scrollbarWidth: 10px;
+$scrollbarBg: #1c1917;
+$scrollbarThumbBg: #b8352b;
+
 
 // Контейнер
 $gutter: 15px 0;

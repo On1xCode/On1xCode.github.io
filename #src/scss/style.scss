@@ -15,7 +15,7 @@
 
 ::selection {
   background-color: $accent;
-  color: #fff;
+  color: $whiteTextColor;
 }
 
 input,
@@ -41,9 +41,7 @@ body {
   min-width: 320px;
   position: relative;
   overflow-x: hidden;
-  background-color: #1c1917;
-  // background: linear-gradient(180deg, #1c1917 0%, #484540 100%);
-  overflow-x: hidden;
+  background-color: $bodyBgDark;
 }
 
 
@@ -76,7 +74,7 @@ a {
 section {
   padding: 30px 0;
   &.light {
-    background-color: #292524;
+    background-color: $bodyBgLight;
   }
 }
 
@@ -91,7 +89,7 @@ section {
 }
 
 .btn {
-  background: #f44336;
+  background: $accent;
   border-radius: 10px;
   padding: 12px 20px;
   font-size: 16px;
@@ -99,13 +97,13 @@ section {
   display: inline-block;
   transition: filter 0.2s;
   &:hover {
-    filter: drop-shadow(0px 0px 3px #ff0000);
+    filter: drop-shadow(0px 0px 3px $accent);
 
   }
 }
 
 .btn-fluid {
-  border: 1px solid #f44336;
+  border: 1px solid $accent;
   border-radius: 10px;
   padding: 12px 20px;
   font-size: 16px;
@@ -113,7 +111,7 @@ section {
   display: inline-block;
   position: relative;
   overflow: hidden;
-  filter: drop-shadow(0px 0px 25px #ff0000);
+  filter: drop-shadow(0px 0px 25px $accent);
   &:hover {
     &:before {
       width: 105%;
@@ -126,7 +124,7 @@ section {
     left: 0;
     top: 50%;
     transform: translate(0, -50%);
-    background-color: #f44336;
+    background-color: $accent;
     width: 0%;
     height: 105%;
     transition: all 0.4s;
@@ -144,7 +142,7 @@ section {
   font-weight: bold;
   text-align: center;
   margin-bottom: 45px;
-  color: #fff;
+  color: $whiteTextColor;
 
   @media screen and (max-width: 480px){
     font-size: 20px;
@@ -156,20 +154,20 @@ section {
 // ===== Scrollbar ========================================================
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: $scrollbarWidth;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #1c1917;
+  background-color: $scrollbarBg;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #b8352b;
+  background-color: $scrollbarThumbBg;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba($color: #b8352b, $alpha: 0.5);
+  background-color: rgba($scrollbarThumbBg, 0.8);
 }
 
 // ===== Scrollbar ========================================================
@@ -248,7 +246,7 @@ section {
 		left: 0;
 		width: 100%;
 		height: 2px;
-		background-color: #fff;
+		background-color: $whiteTextColor;
 		transition: all 0.2s;
     border-radius: 2px;
   }
@@ -259,7 +257,7 @@ section {
 		left: 0;
 		width: 100%;
 		height: 2px;
-		background-color: #fff;
+		background-color: $whiteTextColor;
 		transition: all 0.2s;
     border-radius: 2px;
   }
@@ -269,17 +267,17 @@ section {
 		left: 0;
 		width: 100%;
 		height: 2px;
-		background-color: #fff;
+		background-color: $whiteTextColor;
 		transition: all 0.2s;
     border-radius: 2px;
   }
 	&.active::before {
-		background-color: #fff;
+		background-color: $whiteTextColor;
 		transform: rotate(45deg);
 		top: 9px;
   }
 	&.active::after {
-		background-color: #fff;
+		background-color: $whiteTextColor;
 		transform: rotate(-45deg);
 		bottom: 9px;
   }
@@ -293,9 +291,8 @@ section {
     display: block;
   }
   .header__nav {
-    // display: none;
     position: absolute;
-    background-color: #1c1917;
+    background-color: $bodyBgDark;
     left: 0;
     right: 0;
     top: 0;
@@ -338,7 +335,7 @@ section {
   &__title {
     font-size: 64px;
     font-weight: bold;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     span {
       display: inline-block;
       background-color: $accent;
@@ -356,7 +353,7 @@ section {
 
   // .intro__subtitle
   &__subtitle {
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     font-size: 20px;
     max-width: 700px;
     margin: 25px auto 0 auto;
@@ -405,7 +402,7 @@ section {
   &__body {
     width: 36px;
     height: 53px;
-    border: 2px solid #fff;
+    border: 2px solid $whiteTextColor;
     background-color: transparent;
     border-radius: 30px;
     position: relative;
@@ -416,7 +413,7 @@ section {
   &__dot {
     width: 8px;
     height: 8px;
-    background-color: #fff;
+    background-color: $whiteTextColor;
     border-radius: 50%;
     position: absolute;
     top: 10px;
@@ -461,7 +458,7 @@ section {
 
 
 .steps {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 
   // .steps__wrapper
   &__wrapper {
@@ -571,77 +568,6 @@ section {
     }
   }
 
-  // &__item {
-  //   max-width: 365px;
-  //   background-color: #fff;
-  //   color: #212121;
-  //   padding: 15px;
-  //   border-radius: 10px;
-  //   @media screen and (max-width: 1195px){
-  //     & + & {
-  //       margin-top: 25px;
-  //     }
-  //   }
-  // }
-
-  // // .steps__item-title
-  // &__item-title {
-  //   text-align: center;
-  //   font-style: normal;
-  //   font-weight: bold;
-  //   font-size: 18px;
-  //   line-height: 21px;
-  //   color: #212121;
-  //   position: relative;
-  //   z-index: 2;
-  //   span {
-  //     background-color: #fff;
-  //     display: inline-block;
-  //     padding: 0 8px;
-  //   }
-  //   &::before {
-  //     z-index: -1;
-  //     content: "";
-  //     position: absolute;
-  //     width: 100%;
-  //     height: 1px;
-  //     background-color: #84cc16;
-  //     left: 50%;
-  //     top: 50%;
-  //     transform: translate(-50%, -50%);
-  //   }
-  // }
-
-  // // .steps__item-subtitle
-  // &__item-subtitle {
-  //   font-weight: 300;
-  //   text-align: center;
-  //   line-height: 16px;
-  // }
-
-  // // .steps__item-list
-  // &__item-list {
-  //   list-style: none;
-  // }
-
-  // li {
-  //   font-style: normal;
-  //   font-weight: 300;
-  //   font-size: 14px;
-  //   line-height: 16px;
-  //   letter-spacing: 0.045em;
-  //   color: #212121;
-  //   &::before {
-  //     content: "";
-  //     display: inline-block;
-  //     width: 11px;
-  //     height: 12px;
-  //     background-image: url("../img/list-item.svg");
-  //   }
-  // }
-  // li + li {
-  //   margin-top: 10px;
-  // }
 }
 
 // ===== Steps ========================================================
@@ -675,12 +601,12 @@ section {
     display: flex;
     padding: 10px;
     align-items: center;
-    background-color: #fff;
+    background-color: $whiteTextColor;
     margin-bottom: 20px;
     border-radius: 10px;
     transition: filter 0.2s, transform 0.3s;
     &:hover {
-      filter: drop-shadow(0px 0px 5px #ff0000);
+      filter: drop-shadow(0px 0px 5px $accent);
       transform: translateX(-15px);
     }
     &-img {
@@ -694,11 +620,11 @@ section {
       }
     }
     &-text {
-      font-family: "Poppins";
+      font-family: "Poppins", sans-serif;
       font-weight: 500;
       padding-left: 15px;
       line-height: 1.3;
-      color: #212121;
+      color: $darkTextColor;
       font-size: 15px;
     }
     @media screen and (max-width: 580px) {
@@ -715,8 +641,6 @@ section {
 
   // .work__img
   &__img {
-    // border: 1px solid #f44336;
-    // border-radius: 10px;
     overflow: hidden;
     img {
       width: 100%;
@@ -752,14 +676,14 @@ section {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     padding: 45px 15px 15px 15px;
-    color: #212121;
-    background-color: #fff;
+    color: $darkTextColor;
+    background-color: $whiteTextColor;
     max-width: 280px;
     border-radius: 10px;
     margin: 0 30px;
     transition: transform 0.3s, filter 0.2s;
     &:hover {
-      filter: drop-shadow(0px 0px 5px #ff0000);
+      filter: drop-shadow(0px 0px 5px $accent);
       transform: translateY(-20px);
       @media screen and (max-width: 670px){
         transform: translateY(-10px);
@@ -782,7 +706,7 @@ section {
       font-weight: bold;
       font-size: 48px;
       line-height: 59px;
-      color: #f44336;
+      color: $accent;
     }
   }
 
@@ -808,7 +732,7 @@ section {
     line-height: 16px;
     max-width: 670px;
     margin: 0 auto;
-    font-family: "Poppins";
+    font-family: "Poppins", sans-serif;
     position: relative;
     display: flex;
     align-items: center;
@@ -871,13 +795,13 @@ section {
     padding: 0;
     margin: 10px;
     transition: filter 0.2s;
-    filter: drop-shadow(0px 0px 4px #ff0000);
+    filter: drop-shadow(0px 0px 4px $accent);
     &:hover {
-      filter: drop-shadow(0px 0px 8px #ff0000);
+      filter: drop-shadow(0px 0px 8px $accent);
     }
     i {
       font-size: 22px;
-      color: #fff;
+      color: $whiteTextColor;
     }
   }
 
@@ -897,7 +821,7 @@ section {
   // .reviews-slide__body
   &__body {
     background-color: #fafafa;
-    color: #212121;
+    color: $darkTextColor;
     border-radius: 0 10px 0 10px;
     padding: 15px;
     transition: transform 0.5s;
@@ -979,7 +903,7 @@ section {
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: $whiteTextColor;
     border-radius: 10px;
     padding: 20px;
     @media screen and (max-width: 920px){
@@ -1015,7 +939,7 @@ section {
 
   // .author__descr
   &__descr {
-    color: #212121;
+    color: $darkTextColor;
   }
 
   // .author__descr-title
@@ -1093,11 +1017,11 @@ section {
 // ===== Start ========================================================
 
 .start {
-  color: #212121;
+  color: $darkTextColor;
 
   // .start__wrapper
   &__wrapper {
-    background-color: #ffffff;
+    background-color: $whiteTextColor;
     max-width: 970px;
     margin: 0 auto 30px;
     border-radius: 10px;
@@ -1127,7 +1051,7 @@ section {
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-    color: #ffffff;
+    color: $whiteTextColor;
     @media screen and (max-width: 490px){
       font-size: 16px;
     }
@@ -1140,7 +1064,7 @@ section {
     font-weight: 900;
     font-size: 72px;
     line-height: 1;
-    color: #ffffff;
+    color: $whiteTextColor;
     @media screen and (max-width: 490px){
       margin: 15px 0 0 0;
       font-weight: 900;
@@ -1155,7 +1079,7 @@ section {
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
-    color: #ffffff;
+    color: $whiteTextColor;
     @media screen and (max-width: 490px){
       font-size: 15px;
     }
@@ -1166,7 +1090,7 @@ section {
     font-size: 24px;
     line-height: 130%;
     text-align: center;
-    color: #212121;
+    color: $darkTextColor;
     max-width: 350px;
     margin: 0 auto;
     @media screen and (max-width: 490px){
@@ -1185,7 +1109,7 @@ section {
   background: #84CC16;
   border-radius: 3px;
   padding: 0 5px;
-  color: #fff;
+  color: $whiteTextColor;
 }
 // ===== Start ========================================================
 
@@ -1211,7 +1135,7 @@ section {
     max-width: 500px;
     margin: 0 auto;
     overflow: hidden;
-    color: #212121;
+    color: $darkTextColor;
     &:not(.active) {
       .faq__header {
         border-color: transparent;
@@ -1255,7 +1179,7 @@ section {
       background-color: $accent;
       text-align: center;
       line-height: 30px;
-      color: #fff;
+      color: $whiteTextColor;
       font-weight: bold;
       border-radius: 50%;
       position: absolute;
@@ -1269,7 +1193,7 @@ section {
   // .faq__header-arrow
   &__header-arrow {
     font-size: 20px;
-    color: #212121;
+    color: $darkTextColor;
     transition: transform 0.2s ease-in-out;
     transform: rotate(180deg);
   }
@@ -1318,6 +1242,6 @@ section {
     font-weight: bold;
     font-size: 16px;
     line-height: 19px;
-    color: #FFFFFF;
+    color: $whiteTextColor;
   }
 }
